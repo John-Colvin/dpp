@@ -1,8 +1,8 @@
 {
 	"fileVersion": 1,
 	"versions": {
-		"libclang": "0.1.9",
+		"libclang": {"path":"../libclang"},
 		"sumtype": "0.7.1",
-		"unit-threaded": "0.10.3"
+		"unit-threaded": {"path":"../unit-threaded"}
 	}
 }

@@ -133,6 +133,9 @@ private struct TranslationText {
     string dlangDeclarations;
 }
 
+version (Windows)
+    extern(C) private int _mktemp_s(char* nameTemplate, size_t sizeInChars) nothrow @safe @nogc;
+
 // the translated D code from all #included files
 private TranslationText translationText(File)(in from!"dpp.runtime.options".Options options,
                                               in string inputFileName)

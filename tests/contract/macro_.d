@@ -52,6 +52,9 @@ import contract;
         TranslationUnitFlags.DetailedPreprocessingRecord,
     );
 
+    import std.stdio;
+    writeln(tu.children);
+
     auto childrenRange = tu.children.filter!(a => !isBuiltinMacro(a));
     const children = () @trusted { return childrenRange.array; }();
     children.length.should == 4;

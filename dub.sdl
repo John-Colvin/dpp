@@ -10,7 +10,7 @@ targetName "d++"
 dflags "-dip25"
 lflags "-L/usr/lib/llvm-6.0/lib" platform="posix" # for Travis CI
 
-dependency "libclang" version="~>0.1.8"
+dependency "libclang" path="../libclang"
 dependency "sumtype"  version="~>0.7.1"
 
 versions "SumTypeNoDefaultCtor"
@@ -35,7 +35,7 @@ configuration "unittest" {
     sourcePaths "tests"
     importPaths "tests"
     excludedSourceFiles "source/main.d" "tests/contract/main.d" "tests/it/main.d"
-    dependency "unit-threaded" version="*"
+    dependency "unit-threaded" path="../unit-threaded"
 }
 
 
@@ -46,7 +46,7 @@ configuration "integration" {
     importPaths "tests"
 
     excludedSourceFiles "source/main.d"
-    dependency "unit-threaded" version="*"
+    dependency "unit-threaded" path="../unit-threaded"
 }
 
 
@@ -57,7 +57,7 @@ configuration "contract" {
     importPaths "tests"
 
     excludedSourceFiles "source/main.d"
-    dependency "unit-threaded" version="*"
+    dependency "unit-threaded" path="../unit-threaded"
 }
 
 
@@ -67,6 +67,6 @@ configuration "dpp2" {
     sourcePaths "dpp2/source" "dpp2/tests" "tests"
     importPaths "dpp2/source" "dpp2/tests" "tests"
     excludedSourceFiles "source/main.d" "tests/ut/package.d"
-    dependency "unit-threaded" version="*"
+    dependency "unit-threaded" path="../unit-threaded"
     versions "dpp2"
 }
